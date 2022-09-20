@@ -40,7 +40,7 @@ function App() {
           </div>
         </div>
 
-        {data.name != undefined && 
+        {data.name !== undefined && 
         <div className="bottom">
           <div className="feels">
             {data.main ? <p className="bold">{(data.main.feels_like - 32).toFixed() / 1.8.toFixed()} °C</p> : null}
