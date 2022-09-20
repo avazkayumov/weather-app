@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import searchIcon from "./assets/search.png"
+
 function App() {
 
   const [data, setData] = useState({})
@@ -9,21 +11,28 @@ function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=fee9548112180af518e0bdcac706588a`
 
   const searchLocation = (event) => {
-    axios.get(url).then((res) => {
-      setData(res.data)
-      console.log(res.data)
-    })
+    if (event.key === "Enter") {
+      axios.get(url).then((res) => {
+        setData(res.data)
+        console.log(res.data)
+      })
+    }
   }
 
   return (
     <div className="app">
       <div className="search">
+      <div className="search-img">
         <input
         // value={location}
         onChange={event => setLocation(event.target.value)}
         onKeyPress={searchLocation}
         placeholder="Enter Location"
-        type="text"/>
+        type="text"
+        />
+        <img className="search-icon" src={searchIcon} alt="" />
+      </div>
+        
       </div>
       <div className="container">
         <div className="top">

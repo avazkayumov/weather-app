@@ -83,19 +83,41 @@ h1 {
 }
 
 .app .search {
-  text-align: center;
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 375px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .app input {
   padding: .7rem 1.5rem;
+  outline: none;
   font-size: 1.2rem;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  background: rgba(255,255,255,0.1);
-  color: #f8f8f8;
+  background-color: transparent;
+  border: none;
+  color: white;
 }
 
 ::placeholder {
   color: #f8f8f8;
+}
+
+.search-img {
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255,255,255,0.1);
+  width: 100%;
+}
+
+.search-icon {
+  position: relative;
+  top: 8px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
 }
