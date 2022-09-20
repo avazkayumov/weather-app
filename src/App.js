@@ -9,12 +9,10 @@ function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=fee9548112180af518e0bdcac706588a`
 
   const searchLocation = (event) => {
-    if (event.key === 'Enter') {
-      axios.get(url).then((res) => {
-        setData(res.data)
-        console.log(res.data)
-      })
-    }
+    axios.get(url).then((res) => {
+      setData(res.data)
+      console.log(res.data)
+    })
   }
 
   return (
